@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/typinglogo.png">
+    <title>Typing Speed Test Website</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Acme&family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Acme', sans-serif;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        .mainDiv {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background-color: #3498db
+        }
+
+        .centerDiv {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        h1 {
+            text-transform: capitalize;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ecf0f1;
+            text-shadow: 1px 2px 3px #2980b9;
+            font-size: 2.1rem;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        textarea {
+            background-color: #444;
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+            border-radius: 10px 10px 0 0;
+            border: 20px solid #34495e;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .mainbtn {
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 5px solid #2980b9;
+            background-color: #ecf0f1;
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainDiv">
+        <div class="centerDiv">
+            <h1>Welcome To Typing Speed Test</h1>
+            <h2 id="msg"></h2>
+            <br>
+            <textarea name="mywords" id="mywords" cols="100" rows="10" placeholder="Remember, be nice!"></textarea>
+            <br>
+            <button id="btn" class="mainbtn">Start</button>
+        </div>
+    </div>
+
+    <script>
+        const setOfWords = [
+            "India, officially the Republic of India, is a country in South Asia.",
+            "It is the seventh-largest country by area.",
+            "The most populous country as of June 2023 and from the time of its independence in 1947, the world's most populous democracy.",
+            "Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest, and the Bay of Bengal on the southeast, it shares land borders with Pakistan to the west.",
+            "China, Nepal, and Bhutan to the north and Bangladesh and Myanmar to the east.",
+            "In the Indian Ocean, India is in the vicinity of Sri Lanka and the Maldives.",
+            "Its Andaman and Nicobar Islands share a maritime border with Thailand, Myanmar, and Indonesia."
+        ]
+
+        const msg = document.getElementById('msg');
+        const typeWords = document.getElementById('mywords');
+        const btn = document.getElementById('btn');
+
+        let startTime, endTime;
+
+        const playGame = () => {
+            let randomNumber = Math.floor(Math.random() * setOfWords.length);
+            msg.innerText = setOfWords[randomNumber];
+            let date = new Date();
+            startTime = date.getTime();
+            btn.innerText = "Done";
+        }
+
+        const endPlay = () => {
+            let date = new Date();
+            endTime = date.getTime();
+            let totalTime = ((endTime - startTime) / 1000);
+            console.log(totalTime);
+
+            let totalStr = typeWords.value;
+            let wordCount = wordCounter(totalStr);
+
+            let speed = Math.round((wordCount / totalTime) * 60);
+            let finalMsg = "You typed total at " + speed + " words per minutes. ";
+            finalMsg += compareWords(msg.innerText, totalStr);
+            msg.innerText = finalMsg;
+        }
+
+        const compareWords = (str1, str2) => {
+            let words1 = str1.split(" ");
+            let words2 = str2.split(" ");
+            let cnt = 0;
+            words1.forEach(function (item, index) {
+                if (item == words2[index]) {
+                    cnt++;
+                }
+            })
+            let errorWords = (words1.length - cnt);
+            return (cnt + " correct out of " + words1.length + " words and the total number of error are " + errorWords + ".");
+        }
+
+        const wordCounter = (str) => {
+            let response = str.split(" ").length;
+            console.log(response);
+            return response;
+        }
+
+        btn.addEventListener('click', function () {
+            console.log(this);
+            if (this.innerText == 'Start') {
+                typeWords.disabled = false;
+                playGame();
+            } else if (this.innerText = 'Done') {
+                typeWords.disabled = true;
+                btn.innerText = "Start";
+                endPlay();
+            }
+        })
+    </script>
+</body>
+
+</html>
