@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced JS</title>
+</head>
+<body>
+    <script>
+        var globalEC = "added";
+        function a(){
+            var fa = "2nd function o/p1";
+            console.log(fa);
+            debugger;
+            b();
+            console.log("let's see when i will be on console.");
+        }
+
+        function b(){
+            debugger;
+            console.log("2nd function o/p2");
+            c();
+        }
+
+        function c(){
+            debugger;
+            console.log("3nd function o/p3");
+        }
+
+        debugger;
+        a();
+    </script>
+</body>
+</html>

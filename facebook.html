@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook</title>
+</head>
+
+<body>
+    <script>
+        let database = [
+            {
+                username: 'Deep',
+                password: 'Patel',
+            }
+        ];
+
+        let status = [
+            {
+                name: 'Deep',
+                status: 'I need learn Js',
+            },
+            {
+                name: 'Thapa',
+                status: 'I will help deep to learn Js',
+            }
+        ];
+
+        const username = prompt('Enter your username');
+        const password = prompt('Enter your password');
+
+        const login = (user, pass) => {
+            if (user === database[0].username && pass === database[0].password) {
+                // console.log(status);
+                for (let value of status) {
+                    console.log(status);
+                }
+            } else {
+                alert('Username or password is incorrect');
+            }
+        }
+
+        login(username, password);
+    </script>
+</body>
+
+</html>

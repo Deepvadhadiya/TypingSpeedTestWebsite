@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        hello();
+        function hello() {
+            alert("Welcome to the World! :");
+        }
+
+        sum();
+        function sum() {
+            var a = 10;
+            var b = 20;
+            var add = a + b;
+            document.write(add);
+        }
+
+        var stored = sum(10, 20);
+        document.write("The sum of two no. is " + stored + "<br>");
+        function sum(x, y) {
+            var add = x + y;
+            return add;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope Chain</title>
+</head>
+
+<body>
+    <script>
+        var a = "Hello Guys..";
+        function first() {
+            var b = "How are you?..";
+            second();
+            function second() {
+                var c = "Myself Deep";
+                console.log(a + b + c);
+                three();
+                // function three() {
+                //     var d = "Learn JS";
+                //     console.log(a + b + c + d);
+                //     console.log(a + d);
+                // }
+            }
+        }
+
+        function three() {
+            var d = "Learn JS";
+            // console.log(a + b + c + d);
+            console.log(a + d);
+        }
+        first();
+    </script>
+</body>
+
+</html>

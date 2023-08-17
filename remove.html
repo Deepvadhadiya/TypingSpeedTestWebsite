@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Last Element</title>
+</head>
+
+<body>
+    <script>
+        let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+        array.pop()
+        let newArray = [];
+        let last = array.length - 1;
+        for (let i = 0; i < array.length - last; i++) {
+            newArray.push(array);
+        }
+        document.write(newArray);   
+        // document.write(typeof newArray);
+    </script>
+</body>
+
+</html>
+
+<!-- let first = delete array[0]; -->

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation Box</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function myfun() {
+            var userconfirmation = confirm("Do you want to visit website");
+            if (userconfirmation == true) {
+                window.open("https://www.youtube.com/watch?v=HqcpsXoXUVg");
+                return true;
+            }
+            else {
+                document.write("User doesn't want to visit the page.")
+                return false;
+            }
+        }
+    </script>
+
+    <input type="button" value="Click Me" onclick="myfun()">
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This Keyword</title>
+</head>
+
+<body>
+    <script>
+        // "use strict"
+        // function sum() {
+        //     var add = 5 + 545;
+        //     console.log("sum of two number is :- " + add);
+        //     console.log(this);
+        // }
+
+        // sum();
+
+        const hello = {
+            name: "Deep",
+            qulification: "BCA",
+            sum: function () {
+                var add = 5 + 545;
+                console.log("sum of two number is :- " + add);
+                console.log("My name is " + this.name + " and I am completed study in " + this.qulification + " stream.");
+                console.log(this);
+                function child() {
+                    var name = "patel";
+                    console.log("child method name : " + name);
+                    console.log(this);
+                }
+                child();
+            }
+        }
+        hello.sum();
+    </script>
+</body>
+
+</html>

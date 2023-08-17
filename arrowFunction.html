@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow function</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <button id="btn">click me</button>
+    <script>
+        // let myFunction = (a, b) => a * b;
+        // document.getElementById("demo").innerHTML = myFunction(5, 6);
+
+        // let hello = "";
+        // hello = function(){
+        //     return "Hello World";
+        // }
+        // document.getElementById("demo").innerHTML = hello();
+
+        // let hello = "";
+        // hello = () => {
+        //     return "Hello World";
+        // }
+        // document.getElementById("demo").innerHTML = hello();
+
+        // let hello = "";
+        // hello = () => "Hello World";
+        // document.getElementById("demo").innerHTML = hello();
+
+        // let hello = "";
+        // hello = (val) => "Hello " + val;
+        // document.getElementById("demo").innerHTML = hello("Universe");
+
+        // let hello = "";
+        // hello = val => "Hello " + val;
+        // document.getElementById("demo").innerHTML = hello("Universe");
+
+        // let hello = "";
+        // hello = function () {
+        //     document.getElementById("demo").innerHTML += this;
+        // }
+        // window.addEventListener("load", hello);
+        // document.getElementById("btn").addEventListener("click", hello);
+
+        let hello = "";
+        hello = () => {
+            document.getElementById("demo").innerHTML += this;
+        }
+        window.addEventListener("load", hello);
+        document.getElementById("btn").addEventListener("click", hello);
+
+    </script>
+    
+</body>
+
+</html>
